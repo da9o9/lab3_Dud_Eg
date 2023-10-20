@@ -1,0 +1,397 @@
+
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+
+int main(){
+    std::cout << "Введите номер задачи(пример - задача 1 пункт 1: 11):" << std::endl;
+    int task_number;
+    std::cin >> task_number;
+    if(task_number == 11){
+        std::cout << "Введите размер массива:" << std::endl;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        for(int j = 0; j < s; ++j){
+            A[j] *= 2;
+        }
+        std::cout << "Результат:" << std::endl;
+        for(int j = 0; j < s; ++j){
+            std::cout << A[j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    if(task_number == 12){
+        std::cout << "Введите размер массива и число a:" << std::endl;
+        int s, a;
+        std::cin >> s >> a;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        for(int j = 0; j < s; ++j){
+            A[j] -= a;
+        }
+        std::cout << "Результат:" << std::endl;
+        for(int j = 0; j < s; ++j){
+            std::cout << A[j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    if(task_number  == 13){
+        std::cout << "Введите размер массива:" << std::endl;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        int perv_el = A[0];
+        for(int j = 0; j < s; ++j){
+            A[j] /= perv_el;
+        }
+        std::cout << "Результат:" << std::endl;
+        for(int j = 0; j < s; ++j){
+            std::cout << A[j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    if(task_number == 21){
+        std::cout << "Введите размер массива:" << std::endl;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        double sum = 0;
+        for(int j = 0; j < s; ++j){
+            sum += A[j];
+        }
+        std::cout << "Результат:" << std::endl << sum << std::endl;
+    }
+    if(task_number == 22){
+        std::cout << "Введите размер массива:" << std::endl;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        double sum = 0;
+        for(int j = 0; j < s; ++j){
+            sum += A[j] * A[j];
+        }
+        std::cout << "Результат:" << std::endl << sum << std::endl;
+    }
+    if(task_number == 23){
+        std::cout << "Введите размер массива:" << std::endl;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        double sum = 0;
+        for(int j = 0; j < 6; ++j){
+            sum += A[j];
+        }
+        std::cout << "Результат:" << std::endl << sum << std::endl;
+    }
+    if(task_number == 24){
+        std::cout << "Введите размер массива, К1 элемент и К2 элемент:" << std::endl;
+        int s, k1, k2;
+        std::cin >> s >> k1 >> k2;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        double sum = 0;
+        for(; k1 <= k2; ++k1){
+            sum += A[k1];
+        }
+        std::cout << "Результат:" << std::endl << sum << std::endl;
+    }
+    if(task_number == 25){
+        std::cout << "Введите размер массива:" << std::endl;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        double sum = 0;
+        for(int j = 0; j < s; ++j){
+            sum += A[j];
+        }
+        std::cout << "Результат:" << std::endl << sum/s << std::endl;
+    }
+    if(task_number == 26){
+        std::cout << "Введите размер массива, S1 элемент и S2 элемент:" << std::endl;
+        int s, s1, s2;
+        std::cin >> s >> s1 >> s2;
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        double A[s];
+        for(int j = 0; j < s; ++j){
+            std::cin >> A[j];
+        }
+        int k = 0;
+        double sum = 0;
+        for(; s1 <= s2; ++s1){
+            sum += A[s1];
+            ++k;
+            
+        }
+        sum /= k;
+        std::cout << "Результат:" << std::endl << sum << std::endl;
+        
+    }
+    if(task_number == 30){
+        std::cout << "Введите элементы массива(каждая строка - новый элемент массива):" << std::endl;
+        int A[20];
+        for(int j = 0; j < 20; ++j){
+            std::cin >> A[j];
+        }
+        for(int j = 0; j < 3; ++j){
+            int p = A[j];
+            A[j] = A[17 + j];
+            A[17 + j] = p;
+        }
+        std::cout << "Результат:";
+        for(int j = 0; j < 20; ++j)
+        {
+            std::cout << A[j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    if(task_number == 41){
+        std::cout << "Введите размер вектора:" << std::endl;
+        std::vector <int> v;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы вектора (каждая строка - новый элемент вектора):" << std::endl;
+        int el = 0;
+        for(int j = s; j > 0; --j)
+        {
+            std::cin >> el;
+            v.push_back(el);
+        }
+        int p = -1;
+        for(int j = 0; j < s; ++j){
+            if(v[j] < 0)
+            {
+                p = j;
+                break;
+            }
+        }
+        if(p != -1){
+            v.erase(v.begin() + p);
+            for(int j = 0; j < s - 1; ++j){
+                std::cout << v[j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        if(p == -1){
+            std::cout << "Нет отрицательных элементов";
+            std::cout << std::endl;
+        }
+
+    }
+    if(task_number == 42){
+        std::cout << "Введите размер вектора:" << std::endl;
+        std::vector <int> v;
+        int s;
+        std::cin >> s;
+        std::cout << "Введите элементы вектора (каждая строка - новый элемент вектора):" << std::endl;
+        int el = 0;
+        for(int j = s; j > 0; --j)
+        {
+            std::cin >> el;
+            v.push_back(el);
+        }
+        int p = -1;
+        for(int j = 0; j < s; ++j){
+            if(v[j] % 2 == 0)
+            {
+                p = j;
+            }
+        }
+        if(p != -1){
+            v.erase(v.begin() + p);
+            for(int j = 0; j < s - 1; ++j){
+                std::cout << v[j] << " ";
+            }
+            std::cout << std::endl;
+        }
+        if(p == -1){
+            std::cout << "Нет четных элементов";
+            std::cout << std::endl;
+        }
+
+    }
+    if(task_number == 50){
+        std::cout << "Введите название города:" << std::endl;
+        std::string s;
+        std::cin >> s;
+        if(s.length() % 2 == 0){
+            std::cout << "Четно" << std::endl;
+        }
+        if(s.length() % 2 != 0){
+            std::cout << "Нечетно" << std::endl;
+        }
+        
+    }
+    if(task_number == 60){
+        std::cout << "Введите фамилию 1:" << std::endl;
+        std::string s1;
+        std::cin >> s1;
+        std::cout << "Введите фамилию 2:" << std::endl;
+        std::string s2;
+        std::cin >> s2;
+        if(s1.length() > s2.length()){
+            std::cout << "True" << std::endl;
+        }
+    }
+    if(task_number == 70){
+        std::string s1 ;
+        std::cout << "Введите город 1: " << std::endl;
+        std::cin >> s1;
+        int a1 = s1.size ();
+        std::string s2;
+        std::cout << "Введите город 2: " << std::endl;
+        std::cin >> s2;
+        int a2 = s2.size ();
+        std::string s3;
+        std::cout << "Введите город 3: " << std::endl;
+        std::cin >> s3;
+        int a3 = s3.size ();
+        if (a1 > a2 && a1 > a3 && a3 < a2){
+                std::cout << "the longest:" << std::endl;
+                std::cout << s1;
+                std::cout << std::endl;
+                std::cout << "the shortest:" << std::endl;
+                std::cout << s3;
+                std::cout << std::endl;
+            }
+            
+        if (a1 > a2 && a1 > a3 && a3 > a2){
+                std::cout << "the longest" << std::endl;
+                std::cout << s1;
+                std::cout << std::endl;
+                std::cout << "the shortest" << std::endl;
+                std::cout << s2;
+                std::cout << std::endl;
+            }
+            if (a2 > a1 && a2 > a3 && a3 < a1){
+                    std::cout << "the longest" << std::endl;
+                    std::cout << s2;
+                    std::cout << std::endl;
+                    std::cout << "the shortest" << std::endl;
+                    std::cout << s3;
+                    std::cout << std::endl;
+                }
+            
+            if (a2 > a1 && a2 > a3 && a3 > a1){
+                    std::cout << "the longest" << std::endl;
+                    std::cout << s2;
+                    std::cout << std::endl;
+                    std::cout << "the shortest" << std::endl;
+                    std::cout << s1;
+                    std::cout << std::endl;
+                }
+            
+            if (a3 > a1 && a3 > a2 && a2 < a1){
+                    std::cout << "the longest" << std::endl;
+                    std::cout << s3;
+                    std::cout << std::endl;
+                    std::cout << "the shortest" << std::endl;
+                    std::cout << s2;
+                    std::cout << std::endl;
+                }
+            
+            if (a3 > a1 && a3 > a2 && a2 > a1){
+                std::cout << "the longest" << std::endl;
+                    std::cout << s3;
+                    std::cout << std::endl;
+                    std::cout << "the shortest" << std::endl;
+                    std::cout << s1;
+                    std::cout << std::endl;
+                }
+            }
+    
+
+    if(task_number == 80){
+        std::vector <char> v;
+        std::cout << "Введите количество букв, m, n:" << std::endl;
+        int s, m, n;
+        std::cin >> s >> m >> n;
+        std::cout << "Введите слово:" << std::endl;
+        char el;
+        for(int j = s; j > 0; --j){
+            std::cin >> el;
+            v.push_back(el);
+        }
+        for(int j = m; j <= n; ++j){
+            std::cout << v[j];
+        }
+        std::cout  << std::endl;
+        
+    }
+
+    if(task_number == 90){
+        std::cout << "Введите слово:" << std::endl;
+        std::string s;
+        std::cin >> s;
+        long long sum;
+        sum = s.size();
+        std::string sn;
+        for(int j = 0; j < sum; ++j){
+            sn += '*';
+        }
+        s = sn + s + sn;
+        std::cout << s;
+    }
+    if(task_number == 100){
+        std::cout << "Введите предложение:" << std::endl;
+        std::string s;
+        std::cin.ignore();
+        getline(std::cin, s);
+        long double schet = 0;
+        for(int j = 0; j < s.length(); ++j){
+            if(s[j] == 'a'){
+                ++schet;
+            }
+        }
+        long double otn = (schet / s.length()) * 100;
+        std::cout << otn << "%" << std::endl;
+    }
+    if(task_number == 110){
+            std::string s = "Can you can a can as a canner can can a can ?";
+            std::string new_word;
+            std::cout<< "Введите слово:" << std::endl;
+            std::cin>> new_word;
+            int p = 0;
+            while ((p = s.find("can ", p)) != std::string::npos){
+                s.replace(p, 3, new_word);
+                p += new_word.length();
+            }
+            std::cout << s << std::endl;
+
+
+    }
+}
+
+
